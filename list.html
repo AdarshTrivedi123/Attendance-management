@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <style>
+              #tdesign {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #tdesign th {
+
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        #tdesign td,
+        #tdesign th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #tdesign tr:nth-child(even) {
+            background-color: rgb(207, 225, 249);
+        }
+
+        #tdesign tr:hover {
+            background-color: rgb(109, 197, 245);
+        }
+       .fa{
+        font-size: 30px;
+       }
+       .check_box{
+        height:20px;
+        width:20px;
+       }
+       .date{
+        font-size: 20px;
+       }
+        </style>
+    </head>
+    <body>
+        <div class="date"> Date: {{dt_dummy}} </div>
+        <table id="tdesign">
+            <tr>  
+                <th>Name</th>
+                <th>Admission Number </th>
+                <th>Mark Attendance </th>
+
+            </tr>
+            {% for name,admno in data %}
+            <tr>
+                <td>{{name}}</td> 
+                <td>{{admno}}</td>
+                <td ><form action="/padata/{{admno}}/{{dt}}" method="POST">
+                    <input type="checkbox" name="pa" value="present" class="check_box">
+                    {% if admno!=ad_done %}
+                    <input type="submit">
+                    {% endif %}
+                </form></td>
+    
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

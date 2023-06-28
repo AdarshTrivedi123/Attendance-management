@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .data {
+            width: 400px;
+            height: 400px;
+
+            background-color: rgb(188, 231, 250);
+            padding: 100px;
+        }
+
+        .lab {
+          margin-top:60px;
+        }
+
+        .txt {
+            font-size: 25px;
+            margin-top: 100px;
+        }
+        .field {
+            margin-top: 20px;
+            background-color: rgb(162, 240, 240);
+            height: 30px;
+            margin-left: 110px;
+            width: 50%;
+        }
+        .msg{
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="data">
+        <div class="msg">{{msg}}</div>
+        <form action="/teacher_attendance" method="POST">
+            <div class="lab">
+                <label class="txt">Choose the class whose attendance you wish to mark: </label>
+                <select name="cl" required>
+                    <option value="10A">10A</option>
+                    <option value="10B">10B</option>
+                    <option value="10C">10C</option>
+                    <option value="10D">10D</option>
+                    <option value="10E">10E</option>
+                </select>
+                <br>
+                <br>
+                <br>
+                <label class="txt">What would you like to do Today? </label>
+                <select name="choice" required>
+                    <option value="view">View attendance</option>
+                    <option value="make">Make attendance</option>
+                </select>
+                <br>
+                <br>
+                <br>
+                <label class="txt">Enter Date </label>
+                <input type="date" name="dt_f">
+                <br>
+                <br>
+                <br>
+                <input type="submit" class="field">
+            </div>
+            <!-- <div>Vie</div> -->
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <style>
+                   #tdesign {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #tdesign th {
+
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        #tdesign td,
+        #tdesign th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #tdesign tr:nth-child(even) {
+            background-color: rgb(207, 225, 249);
+        }
+
+        #tdesign tr:hover {
+            background-color: rgb(109, 197, 245);
+        }
+        </style>
+    </head>
+    <body>
+        Class: {{cl}}&nbsp;&nbsp;&nbsp; date:{{dt_dummy}}
+        <table id="tdesign">
+            <tr>
+                <th>Name</th>
+                <th>Admission No.</th>
+                <th>Present</th>
+            </tr>
+            
+            {% for name,admno,present in data %}
+            <tr>
+               <td>{{name}}</td> 
+               <td>{{admno}}</td>
+               <td>{{present}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
